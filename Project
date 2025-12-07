@@ -1,0 +1,37 @@
+#Frida Kahlo Arts Project
+
+# Create the list and add the paintings
+paintings = ['The Two Fridas', 'My Dress Hangs Here', 'Tree of Hope', 'Self Portrait With Monkeys']
+
+# Create the dates list
+dates = [1939, 1933, 1946, 1940]
+
+# Zip the lists together and convert to a list
+paintings = list(zip(paintings, dates))
+
+# Print the result of zip'ped lists
+print(paintings)
+
+# Append the new paintings as tuples
+paintings.append(('The Broken Column', 1944))
+paintings.append(('The Wounded Deer', 1946))
+paintings.append(('Me and My Doll', 1937))
+
+# Print to check the new additons to listed paintings
+print(paintings)
+
+# Find the total number of paintings
+num_paintings = len(paintings)
+
+# Generate ID numbers starting at 1, matching the number of paintings
+audio_tour_number = list(range(1, len(paintings) + 1))
+
+# Print to check
+print(audio_tour_number)
+
+# Zip the ID numbers with the paintings
+master_list = list(zip(audio_tour_number, paintings))
+
+# Print master list nicely
+for audio_id, (title, year) in master_list:
+    print(f"{audio_id}. '{title}' ({year})")
